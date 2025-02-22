@@ -5,7 +5,7 @@ project(Client VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 COMPONENTS Quick Network Qml Tools Core REQUIRED)
+find_package(Qt6 COMPONENTS Quick Network REQUIRED)
 
 set(QT_QML_GENERATE_QMLLS_INI ON)
 
@@ -48,7 +48,7 @@ set_target_properties(${PROJECT_NAME}
         MACOSX_BUNDLE TRUE
         WIN32_EXECUTABLE TRUE
 )
-target_link_libraries(${PROJECT_NAME} PRIVATE Common Qt6::Quick Qt6::Network Qt6::Core Qt6::Qml Qt6::Tools)
+target_link_libraries(${PROJECT_NAME} PRIVATE Common Qt6::Quick Qt6::Network)
 target_include_directories(${PROJECT_NAME} PRIVATE src)
 
 include(GNUInstallDirs)
